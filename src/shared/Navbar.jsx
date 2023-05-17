@@ -6,6 +6,18 @@ const Navbar = () => {
       <li>
         <Link to="/">Home</Link>
       </li>
+      <li>
+        <Link to="/allToys">All Toys</Link>
+      </li>
+      <li>
+        <Link to="/myToys">My Toys</Link>
+      </li>
+      <li>
+        <Link to="/addToys">Add a Toys</Link>
+      </li>
+      <li>
+        <Link to="/blogs">Blogs</Link>
+      </li>
     </>
   );
   return (
@@ -35,15 +47,15 @@ const Navbar = () => {
             {navItems}
           </ul>
         </div>
-        <Link to="/">
-          <a className="btn btn-ghost normal-case text-xl">Doctor Portal</a>
-        </Link>
+        <a className="btn btn-ghost normal-case text-xl">Kidol</a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{navItems}</ul>
+        <ul className="menu menu-horizontal px-1">
+          {navItems}
+        </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Appointment</a>
+        <a className="btn">Profile</a>
       </div>
     </div>
   );
