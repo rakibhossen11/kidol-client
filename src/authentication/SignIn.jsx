@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import { Link } from "react-router-dom";
 
 const SignIn = () => {
   const { createUser } = useContext(AuthContext);
@@ -13,7 +14,7 @@ const SignIn = () => {
     createUser(email,password)
     .then(res => {
         const user = res.user;
-        console.log(user);
+        console.log('signin',user);
     })
     .then(err => console.log(err))
   };
@@ -59,6 +60,7 @@ const SignIn = () => {
         >
           Register new account
         </button>
+        <p>Already have an account?<Link to='/login'>Sign In</Link></p>
       </form>
     </div>
   );
