@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      display: ['Rubik', "sans-serif"],
+    },
   },
   plugins: [require("daisyui"),require('flowbite/plugin')],
 }

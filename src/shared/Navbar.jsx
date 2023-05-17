@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from '../assets/logo/logo.webp';
 
 const Navbar = () => {
   const navItems = (
@@ -47,10 +48,10 @@ const Navbar = () => {
             {navItems}
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">Kidol</a>
+        <img src={logo} alt="" />
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
+        <ul className="menu menu-horizontal px-1 font-display">
           {navItems}
         </ul>
       </div>

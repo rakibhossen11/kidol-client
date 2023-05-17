@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { Link } from "react-router-dom";
+import SocialLogin from "../shared/SocialLogin";
 
 const SignIn = () => {
   const { createUser } = useContext(AuthContext);
@@ -62,6 +63,7 @@ const SignIn = () => {
         </button>
         <p>Already have an account?<Link to='/login'>Sign In</Link></p>
       </form>
+        <SocialLogin></SocialLogin>
     </div>
   );
 };

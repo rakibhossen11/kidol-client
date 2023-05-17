@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import SocialLogin from "../shared/SocialLogin";
 
 const Login = () => {
     const { signIn } = useContext(AuthContext);
@@ -58,6 +59,7 @@ const Login = () => {
           New in kidol?<Link to="/signin">Create Account</Link>
         </p>
       </form>
+        <SocialLogin></SocialLogin>
     </div>
   );
 };
