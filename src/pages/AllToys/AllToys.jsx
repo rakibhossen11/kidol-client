@@ -29,8 +29,10 @@ const AllToys = () => {
         .then(res => res.json())
         .then(data => {
           console.log(data)
-          if(data.deletedCount>0){
+          if(data.deletedCount > 0){
             Swal.fire("Deleted!", "Your file has been deleted.", "success");
+            const remaining = allToys.filter(allToy => allToy._id !== id);
+            setAllToys(remaining);
           }
         })
       }
