@@ -5,7 +5,7 @@ const NewProducts = () => {
     const [products,setProducts] = useState([]);
 
     useEffect(()=>{
-        fetch('products.json')
+        fetch('https://kidol-server.vercel.app/toys')
         .then(res => res.json())
         .then(data => setProducts(data))
     },[])
@@ -16,7 +16,7 @@ const NewProducts = () => {
             <div className='grid grid-cols-3 gap-6 mt-10'>
                 {
                     products.map(product => <Product
-                    key={product.id}
+                    key={product._id}
                     product={product}
                     ></Product> )
                 }

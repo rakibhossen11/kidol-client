@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const AllToysRow = ({allToy}) => {
     const {_id,name,seller,subCategory,price,quantity} = allToy;
@@ -34,7 +35,11 @@ const AllToysRow = ({allToy}) => {
             <th>{price}</th>
             <th>Rating</th>
             <th>{quantity}</th>
-            <th>Details</th> 
+            <th>
+              <Link to={`/updateToys/${_id}`}>
+              <button>Update</button>
+              </Link>
+              </th> 
     </tr>
   );
 };
