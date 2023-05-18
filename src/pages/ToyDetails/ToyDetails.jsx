@@ -1,5 +1,7 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
+import { Rating } from '@smastrom/react-rating'
+import '@smastrom/react-rating/style.css'
 
 const ToyDetails = () => {
   const toyDetails = useLoaderData();
@@ -16,6 +18,7 @@ const ToyDetails = () => {
           <p className="font-myFont text-2xl">Product Category: {category}</p>
           <p className="font-myFont text-2xl">Price: {price}</p>
           <p className="font-myFont text-2xl">Rating: {rating}</p>
+          <button className="bg-orange-400 px-6 py-4 rounded-md text-xl text-white font-myFont">Buy Now</button>
         </div>
       </div>
       <p className="font-myFont text-2xl">Product Details:</p>

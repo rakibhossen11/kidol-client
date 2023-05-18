@@ -1,7 +1,7 @@
 const Banner = () => {
   return (
-    <div className="hero min-h-screen bg-base-200">
-      <div className="grid grid-cols-2 gap-4 m-4">
+    <div className="hero bg-base-200 py-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 m-4">
         <div>
           <div className="carousel w-full">
             <div id="slide1" className="carousel-item relative w-full">
@@ -62,12 +62,12 @@ const Banner = () => {
             </div>
           </div>
         </div>
-        <div>
+        <div className="flex flex-col items-center justify-center">
           <h1 className="text-5xl font-bold">Mega Offer on Sports Car!</h1>
           <p className="py-6">
             Available all kinds of sports car on our website. Get  offer new user .
           </p>
-          <button className="text-white bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-8 py-2.5 text-center mr-2 mb-2 dark:focus:ring-yellow-900">Yellow</button>
+          <button className="bg-orange-400 px-6 py-4 rounded-md text-xl text-white font-myFont w-full">Get Start</button>
         </div>
       </div>
     </div>
