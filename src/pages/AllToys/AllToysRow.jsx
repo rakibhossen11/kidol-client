@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const AllToysRow = ({allToy}) => {
+const AllToysRow = ({allToy,handleDelete}) => {
     const {_id,name,seller,subCategory,price,quantity} = allToy;
+
   return (
     <tr>
       <th>
-        <button className="btn btn-sm btn-circle">
+        <button onClick={() => handleDelete(_id)} className="btn btn-sm btn-circle">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6"

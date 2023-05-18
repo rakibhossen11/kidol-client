@@ -14,7 +14,7 @@ const UpdateToys = () => {
     const details = form.details.value;
     const updateToy = { price, quantity, details };
     console.log("Updated toy", updateToy);
-      fetch(`http://localhost:5000/toys/${_id}`, {
+      fetch(`https://kidol-server.vercel.app/toys/${_id}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",

@@ -47,7 +47,7 @@ import UpdateToys from "../pages/UpdateToys/UpdateToys";
         {
           path: '/updateToys/:id',
           element: <UpdateToys></UpdateToys>,
-          loader: ({params}) => fetch(`http://localhost:5000/toys/${params.id}`)
+          loader: ({params}) => fetch(`https://kidol-server.vercel.app/toys/${params.id}`)
         }
       ]
     },
