@@ -2,37 +2,38 @@ import { data } from "autoprefixer";
 import React from "react";
 
 const AddToys = () => {
-
-    const handleAddToy = event =>{
-        event.preventDefault();
-        const form = event.target;
-        const name = form.name.value;
-        const category = form.toyCategory.value;
-        const image = form.image.value;
-        const price = form.price.value;
-        const rating = form.rating.value;
-        const quantity = form.quantity.value;
-        const details = form.details.value;
-        const newToy = {name,category,image,price,rating,quantity,details};
-        console.log(newToy);
-        fetch('https://kidol-server.vercel.app/toys',{
-          method: 'POST',
-          headers:{
-            'content-type': 'application/json'
-          },
-          body: JSON.stringify(newToy)
-        })
-        .then(res => res.json())
-        .then(data =>{
-          console.log(data)
-        })
-    }
+  const handleAddToy = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const category = form.category.value;
+    const image = form.image.value;
+    const price = form.price.value;
+    const rating = form.rating.value;
+    const quantity = form.quantity.value;
+    const details = form.details.value;
+    const newToy = { name, category, image, price, rating, quantity, details };
+    console.log(newToy);
+    fetch("https://kidol-server.vercel.app/toys", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newToy),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
   return (
     <div>
       <div className="border-2 border-slate-200 p-16 mt-20">
-        <h2 className="font-display text-center text-2xl mb-5">Add Your Sports Car Toy</h2>
+        <h2 className="font-display text-center text-2xl mb-5">
+          Add Your Sports Car Toy
+        </h2>
         <form onSubmit={handleAddToy}>
-        <div className="relative z-0 w-full mb-6 group">
+          <div className="relative z-0 w-full mb-6 group">
             <input
               type="text"
               name="name"
@@ -44,17 +45,14 @@ const AddToys = () => {
               Your Toy Name
             </label>
           </div>
-          <div className="relative z-0 w-full mb-6 group">
-            <input
-              type="text"
-              name="toyCategory"
-              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-              placeholder=" "
-              required
-            />
-            <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-            Toy Category
-            </label>
+          <div class="relative z-0 w-full mb-6 group">
+            <select name="category" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+              <option>
+                Regular Car
+              </option>
+              <option>Sports Car</option>
+              <option>Truck</option>
+            </select>
           </div>
           <div className="relative z-0 w-full mb-6 group">
             <input
@@ -65,7 +63,7 @@ const AddToys = () => {
               required
             />
             <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-            Picture Url
+              Picture Url
             </label>
           </div>
           <div className="relative z-0 w-full mb-6 group">
