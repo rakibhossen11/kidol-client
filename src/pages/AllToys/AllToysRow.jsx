@@ -1,7 +1,7 @@
 import React from "react";
 
 const AllToysRow = ({allToy}) => {
-    const {id,name,seller,subCategory,price,quantity} = allToy;
+    const {_id,name,seller,subCategory,price,quantity} = allToy;
   return (
     <tr>
       <th>

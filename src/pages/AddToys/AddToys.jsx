@@ -1,3 +1,4 @@
+import { data } from "autoprefixer";
 import React from "react";
 
 const AddToys = () => {
@@ -14,6 +15,17 @@ const AddToys = () => {
         const details = form.details.value;
         const newToy = {name,category,image,price,rating,quantity,details};
         console.log(newToy);
+        fetch('https://kidol-server.vercel.app/toys',{
+          method: 'POST',
+          headers:{
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify(newToy)
+        })
+        .then(res => res.json())
+        .then(data =>{
+          console.log(data)
+        })
     }
   return (
     <div>

@@ -5,7 +5,7 @@ const AllToys = () => {
   const [allToys, setAllToys] = useState([]);
 
   useEffect(() => {
-    fetch("products.json")
+    fetch("https://kidol-server.vercel.app/toys")
       .then((res) => res.json())
       .then((data) => setAllToys(data));
   }, []);
@@ -38,7 +38,7 @@ const AllToys = () => {
           <tbody>
             {allToys.map((allToy) => (
               <AllToysRow
-                key={allToy.id}
+                key={allToy._id}
                 allToy={allToy}
               ></AllToysRow>
             ))}

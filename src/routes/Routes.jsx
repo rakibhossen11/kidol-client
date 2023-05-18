@@ -37,7 +37,7 @@ import Blogs from "../pages/Blogs/Blogs";
         },
         {
           path: '/myToys',
-          element: <MyToys></MyToys>
+          element: <MyToys></MyToys>,
         },
         {
           path: '/blogs',

@@ -1,6 +1,7 @@
 import Banner from "./Banner";
 import Gellery from "./Gellery";
-import NewProducts from "./NewProducts";
+import NewProducts from "./NewProducts/NewProducts";
+
 
 const Home = () => {
     return (
