@@ -1,40 +1,45 @@
 [
     {
         "id": 1,
+        "name": "Police car",
         "seller": "Rakib hossen",
-        "sub-category": "truck",
+        "subCategory": "truck",
         "price": 300,
         "quantity": 15,
         "details": "Welcome to our Toy Shop's New Products section! We are thrilled to present an exciting array of toys that will ignite the imagination and bring endless joy to children of all ages. Whether you're searching for educational toys, interactive games, or adorable plush companions, our latest collection is sure to captivate young hearts and minds."
     },
     {
         "id": 2,
+        "name": "Police car",
         "seller": "Rakib hossen",
-        "sub-category": "truck",
+        "subCategory": "truck",
         "price": 300,
         "quantity": 15,
         "details": "Welcome to our Toy Shop's New Products section! We are thrilled to present an exciting array of toys that will ignite the imagination and bring endless joy to children of all ages. Whether you're searching for educational toys, interactive games, or adorable plush companions, our latest collection is sure to captivate young hearts and minds."
     },
     {
         "id": 3,
+        "name": "Police car",
         "seller": "Rakib hossen",
-        "sub-category": "truck",
+        "subCategory": "truck",
         "price": 300,
         "quantity": 15,
         "details": "Welcome to our Toy Shop's New Products section! We are thrilled to present an exciting array of toys that will ignite the imagination and bring endless joy to children of all ages. Whether you're searching for educational toys, interactive games, or adorable plush companions, our latest collection is sure to captivate young hearts and minds."
     },
     {
         "id": 4,
+        "name": "Police car",
         "seller": "Rakib hossen",
-        "sub-category": "truck",
+        "subCategory": "truck",
         "price": 300,
         "quantity": 15,
         "details": "Welcome to our Toy Shop's New Products section! We are thrilled to present an exciting array of toys that will ignite the imagination and bring endless joy to children of all ages. Whether you're searching for educational toys, interactive games, or adorable plush companions, our latest collection is sure to captivate young hearts and minds."
     },
     {
         "id": 5,
+        "name": "Police car",
         "seller": "Rakib hossen",
-        "sub-category": "truck",
+        "subCategory": "truck",
         "price": 300,
         "quantity": 15,
         "details": "Welcome to our Toy Shop's New Products section! We are thrilled to present an exciting array of toys that will ignite the imagination and bring endless joy to children of all ages. Whether you're searching for educational toys, interactive games, or adorable plush companions, our latest collection is sure to captivate young hearts and minds."
