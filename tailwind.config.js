@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {},
     fontFamily: {
-      display: ['Rubik', "sans-serif"],
+      display: ['Bebas Neue', 'sans-serif'],
+      myFont: ['Poppins', 'sans-serif'],
     },
   },
   plugins: [require("daisyui"),require('flowbite/plugin')],
