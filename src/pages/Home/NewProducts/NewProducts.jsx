@@ -12,7 +12,7 @@ const NewProducts = () => {
       .then((data) => setProducts(data));
   }, []);
   return (
-    <div className="my-10 mx-auto">
+    <div className="my-10 mx-auto p-3">
       <h1 className="text-center font-display text-4xl">Shop By Category</h1>
       <p className="text-center font-myFont">
         We are thrilled to present an exciting array of toys that will ignite
@@ -38,7 +38,7 @@ const NewProducts = () => {
           </div>
 
           <TabPanel className=" mt-10">
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {products.map((product) => (
                 <Product key={product._id} product={product}
                 ></Product>
@@ -46,7 +46,7 @@ const NewProducts = () => {
             </div>
           </TabPanel>
           <TabPanel className=" mt-10">
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {products.map((product) => (
                 <Product key={product._id} product={product}
                 ></Product>
@@ -54,7 +54,7 @@ const NewProducts = () => {
             </div>
           </TabPanel>
           <TabPanel className=" mt-10">
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {products.map((product) => (
                 <Product key={product._id} product={product}
                 ></Product>

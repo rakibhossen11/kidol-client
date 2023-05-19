@@ -5,7 +5,7 @@ const Gellery = () => {
     <div className="mt-10">
       <h2 className="text-center font-display text-4xl">Our Gellary</h2>
       <p className="text-center font-myFont">Welcome to our Sports Car Toy Gallery, where speed and style converge in miniature form! Get ready to rev up your imagination as we present a collection of sleek and stunning sports car toys that will captivate auto enthusiasts of all ages.</p>
-      <div className="grid grid-cols-3 gap-4 p-10">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-10">
         <div className="card card-side shadow-xl">
           <figure>
             <img

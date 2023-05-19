@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import '@smastrom/react-rating/style.css'
+import Swal from "sweetalert2";
 
 const ToyDetails = () => {
   const toyDetails = useLoaderData();
@@ -25,6 +26,15 @@ const ToyDetails = () => {
       .then(res=>res.json())
       .then(data=>{
         console.log(data)
+        if(data.acknowledged=true){
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Your Toy has been saved',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        }
       })
     }
 
