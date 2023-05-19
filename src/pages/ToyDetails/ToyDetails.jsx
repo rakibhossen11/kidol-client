@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
-import '@smastrom/react-rating/style.css'
 import Swal from "sweetalert2";
+import '@smastrom/react-rating/style.css'
+import { Rating } from "@smastrom/react-rating";
 
 const ToyDetails = () => {
   const toyDetails = useLoaderData();
@@ -47,9 +48,12 @@ const ToyDetails = () => {
           <p className="font-myFont text-2xl">Available: {quantity}</p>
           <p className="font-myFont text-2xl">Product Category: {category}</p>
           <p className="font-myFont text-2xl">Price: {price}</p>
-          <p className="font-myFont text-2xl">Rating: {rating}</p>
+          <p className="font-myFont text-2xl flex gap-2">Rating:  <Rating 
+            style={{ maxWidth: 150 }} 
+            value={Math.round(rating || 0)} readOnly /> {rating} </p>
           <p className="font-myFont text-2xl">Seller Name: {sellerName}</p>
           <p className="font-myFont text-2xl">Seller Email: {sellerEmail}</p>
+          
           <button onClick={handleToyShop} className="bg-orange-400 px-6 py-4 rounded-md text-xl text-white font-myFont">Order Now</button>
         </div>
       </div>
