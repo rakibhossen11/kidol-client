@@ -20,10 +20,11 @@ const Login = () => {
     .then(res => {
         const user = res.user;
         console.log('login',user);
-        navigate(from,{replace: true})
+        navigate(from, {replace: true})
     })
     .then(err => console.log(err))
   };
+
   return (
     <div className="p-14">
       <form onSubmit={handleSignIn}>

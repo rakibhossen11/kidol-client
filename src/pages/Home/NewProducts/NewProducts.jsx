@@ -40,15 +40,26 @@ const NewProducts = () => {
           <TabPanel className=" mt-10">
             <div className="grid grid-cols-3 gap-6">
               {products.map((product) => (
-                <Product key={product._id} product={product}></Product>
+                <Product key={product._id} product={product}
+                ></Product>
               ))}
             </div>
           </TabPanel>
-          <TabPanel>
-            <h2>Any Sports 2</h2>
+          <TabPanel className=" mt-10">
+          <div className="grid grid-cols-3 gap-6">
+              {products.map((product) => (
+                <Product key={product._id} product={product}
+                ></Product>
+              ))}
+            </div>
           </TabPanel>
-          <TabPanel>
-            <h2>Any Truck 2</h2>
+          <TabPanel className=" mt-10">
+          <div className="grid grid-cols-3 gap-6">
+              {products.map((product) => (
+                <Product key={product._id} product={product}
+                ></Product>
+              ))}
+            </div>
           </TabPanel>
         </Tabs>
       </div>

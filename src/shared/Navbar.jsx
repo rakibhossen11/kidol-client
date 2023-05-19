@@ -1,7 +1,19 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/logo/logo.webp";
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
+import { UserCircleIcon } from "@heroicons/react/24/solid";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  // console.log(user.photoURL)
+
+  const handleLogOut = () => {
+    logOut()
+      .then((res) => {})
+      .then((err) => console.log(err));
+  };
+
   const navItems = (
     <>
       <li>
@@ -53,10 +65,38 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 text-2xl font-display">{navItems}</ul>
+        <ul className="menu menu-horizontal px-1 text-2xl font-display">
+          {navItems}
+        </ul>
       </div>
       <div className="navbar-end">
-        <Link to="/login"><button className="bg-orange-400 px-2 py-1 rounded-sm md:px-6 md:py-4 md:rounded-md text-xs md:text-xl text-white font-myFont">Login</button></Link>
+        {user ? (
+          <>
+            <div className="w-24 h-24 rounded-full">
+              {/* <img src={user?.photoURL} /> */}
+            </div>{" "}
+            <button
+              onClick={handleLogOut}
+              className="border-2 border-white rounded-xl px-5 py-3 font-myFont"
+            >
+              LogOut
+            </button>{" "}
+          </>
+        ) : (
+          <Link to="/login">
+            <button className="border-2 border-white rounded-xl px-5 py-3 font-myFont mr-2">
+              Login
+            </button>
+          </Link>
+        )}
+
+        {user ? (
+            <div className="tooltip" data-tip={user.displayName}>
+                <img className="w-10 h-10 rounded-full" src="" alt="" />
+            </div>
+        ) : (
+          <UserCircleIcon className="h-12 w-12 mr-2 text-blue-500"></UserCircleIcon>
+        )}
       </div>
     </div>
   );
