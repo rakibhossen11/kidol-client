@@ -2,31 +2,42 @@ import React, { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import '@smastrom/react-rating/style.css'
 
-const ToyDetails = () => {
-  const toyDetails = useLoaderData();
-  const { _id, name, sellerName, sellerEmail, image, price, quantity, rating, category, details } =
-    toyDetails;
 
-    const handleToyShop = event =>{
-      event.preventDefault();
-      const name = toyDetails.name;
-      const category = toyDetails.category;
-      const price = toyDetails.price;
-      const quantity = toyDetails.quantity;
-      const orderToy = {name,sellerName,category,price,quantity}
-      console.log(orderToy);
-      fetch('https://kidol-server.vercel.app/shopping',{
-        method: 'POST',
-        headers:{
-          'content-type': 'application/json'
-        },
-        body: JSON.stringify(orderToy)
-      })
-      .then(res=>res.json())
-      .then(data=>{
-        console.log(data)
-      })
-    }
+const ShoppingToyDetails = () => {
+  const toyDetails = useLoaderData();
+  const {
+    _id,
+    name,
+    sellerName,
+    sellerEmail,
+    image,
+    price,
+    quantity,
+    rating,
+    category,
+    details,
+  } = toyDetails;
+
+  const handleToyShop = (event) => {
+    event.preventDefault();
+    const name = toyDetails.name;
+    const category = toyDetails.category;
+    const price = toyDetails.price;
+    const quantity = toyDetails.quantity;
+    const orderToy = { name, sellerName, category, price, quantity };
+    console.log(orderToy);
+    fetch("https://kidol-server.vercel.app/shopping", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(orderToy),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
 
   return (
     <div className="max-w-4xl mx-auto my-10">
@@ -40,7 +51,12 @@ const ToyDetails = () => {
           <p className="font-myFont text-2xl">Rating: {rating}</p>
           <p className="font-myFont text-2xl">Seller Name: {sellerName}</p>
           <p className="font-myFont text-2xl">Seller Email: {sellerEmail}</p>
-          <button onClick={handleToyShop} className="bg-orange-400 px-6 py-4 rounded-md text-xl text-white font-myFont">Order Now</button>
+          <button
+            onClick={handleToyShop}
+            className="bg-orange-400 px-6 py-4 rounded-md text-xl text-white font-myFont"
+          >
+            Order Now
+          </button>
         </div>
       </div>
       <p className="font-myFont text-2xl">Product Details:</p>
@@ -50,4 +66,4 @@ const ToyDetails = () => {
   );
 };
 
-export default ToyDetails;
+export default ShoppingToyDetails;

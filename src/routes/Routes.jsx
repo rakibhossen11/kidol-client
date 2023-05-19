@@ -12,11 +12,14 @@ import Blogs from "../pages/Blogs/Blogs";
 import UpdateToys from "../pages/UpdateToys/UpdateToys";
 import ToyDetails from "../pages/ToyDetails/ToyDetails";
 import PrivateRoutes from "./PrivateRoutes";
+import ShoppingToyDetails from "../pages/ToyDetails/ShoppingToyDetails";
+import Error from "../Error/Error";
 
   const router = createBrowserRouter([
     {
       path: "/",
       element: <Main></Main>,
+      errorElement: <Error></Error>,
       children: [
         {
           path: '/',
@@ -55,6 +58,11 @@ import PrivateRoutes from "./PrivateRoutes";
           path: '/toyDetails/:id',
           element: <PrivateRoutes><ToyDetails></ToyDetails></PrivateRoutes>,
           loader: ({params}) => fetch(`https://kidol-server.vercel.app/toys/${params.id}`)
+        },
+        {
+          path: '/shoppingToyDetails/:id',
+          element: <ShoppingToyDetails></ShoppingToyDetails>,
+          loader: ({params}) => fetch(`https://kidol-server.vercel.app/shopping/${params.id}`)
         }
       ]
     },

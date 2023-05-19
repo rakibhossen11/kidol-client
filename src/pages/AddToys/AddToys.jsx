@@ -1,18 +1,22 @@
 import { data } from "autoprefixer";
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const AddToys = () => {
+  const {user} = useContext(AuthContext);
   const handleAddToy = (event) => {
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
+    const sellerName = user?.displayName;
+    const sellerEmail = user?.email;
     const category = form.category.value;
     const image = form.image.value;
     const price = form.price.value;
     const rating = form.rating.value;
     const quantity = form.quantity.value;
     const details = form.details.value;
-    const newToy = { name, category, image, price, rating, quantity, details };
+    const newToy = { name, sellerName, sellerEmail, category, image, price, rating, quantity, details };
     console.log(newToy);
     fetch("https://kidol-server.vercel.app/toys", {
       method: "POST",
@@ -45,8 +49,8 @@ const AddToys = () => {
               Your Toy Name
             </label>
           </div>
-          <div class="relative z-0 w-full mb-6 group">
-            <select name="category" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+          <div className="relative z-0 w-full mb-6 group">
+            <select name="category" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
               <option>
                 Regular Car
               </option>
