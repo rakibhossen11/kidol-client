@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import '@smastrom/react-rating/style.css'
+import useTitle from "../../hooks/useTitle";
 
 
 const ShoppingToyDetails = () => {
   const toyDetails = useLoaderData();
+  useTitle('Shop Toy')
   const {
     _id,
     name,

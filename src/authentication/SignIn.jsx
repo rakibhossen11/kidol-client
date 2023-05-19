@@ -3,9 +3,12 @@ import { AuthContext } from "../provider/AuthProvider";
 import { Link } from "react-router-dom";
 import SocialLogin from "../shared/SocialLogin";
 import { updateProfile } from "firebase/auth";
+import useTitle from "../hooks/useTitle";
 
 const SignIn = () => {
   const { createUser,user } = useContext(AuthContext);
+  useTitle('Signin');
+  
   const handleSignUp = (event) => {
     event.preventDefault();
     const form = event.target;

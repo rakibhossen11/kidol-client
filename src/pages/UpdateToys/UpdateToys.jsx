@@ -1,10 +1,12 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import useTitle from "../../hooks/useTitle";
 
 const UpdateToys = () => {
     const toys = useLoaderData();
-    console.log(toys);
+    useTitle('Update Toy');
+    // console.log(toys);
     const {_id,price,quantity,details} = toys;
 
   const handleUpdateToy = (event) => {

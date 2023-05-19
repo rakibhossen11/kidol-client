@@ -2,11 +2,13 @@ import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import SocialLogin from "../shared/SocialLogin";
+import useTitle from "../hooks/useTitle";
 
 const Login = () => {
     const { signIn } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
+    useTitle('Login');
 
     const from = location.state?.form?.pathname || '/';
 

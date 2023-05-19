@@ -3,9 +3,11 @@ import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import "@smastrom/react-rating/style.css";
 import { Rating } from "@smastrom/react-rating";
+import useTitle from "../../hooks/useTitle";
 
 const ToyDetails = () => {
   const toyDetails = useLoaderData();
+  useTitle('Toy Details');
   const {
     _id,
     name,

@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 // import AllToysRow from "./AllToysRow";
 import Swal from "sweetalert2";
 import MyToysRow from "./MyToysRow";
+import useTitle from "../../hooks/useTitle";
 
 
 const MyToys = () => {
   const [myToys, setMyToys] = useState([]);
+  useTitle('My-Toys');
 
   useEffect(() => {
     fetch("https://kidol-server.vercel.app/toys")

@@ -2,9 +2,12 @@ import { data } from "autoprefixer";
 import React, { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
+import useTitle from "../../hooks/useTitle";
 
 const AddToys = () => {
   const {user} = useContext(AuthContext);
+  useTitle('Add a Toy');
+  
   const handleAddToy = (event) => {
     event.preventDefault();
     const form = event.target;

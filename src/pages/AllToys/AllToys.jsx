@@ -1,14 +1,23 @@
 import React, { useEffect, useState } from "react";
 import AllToysRow from "./AllToysRow";
+import useTitle from "../../hooks/useTitle";
 
 const AllToys = () => {
   const [allToys, setAllToys] = useState([]);
+  const [showAll,setShowAll] = useState(false);
+  useTitle('All Toys');
 
   useEffect(() => {
     fetch("https://kidol-server.vercel.app/shopping")
       .then((res) => res.json())
       .then((data) => setAllToys(data));
   }, []);
+
+  const handleShowAll = () =>{
+    setShowAll(true);
+  }
+
+
 
   return (
     <div>
@@ -29,7 +38,7 @@ const AllToys = () => {
             </tr>
           </thead>
           <tbody>
-            {allToys.map((allToy) => (
+            {allToys.slice(0,10).map((allToy) => (
               <AllToysRow
                 key={allToy._id}
                 allToy={allToy}
@@ -37,6 +46,13 @@ const AllToys = () => {
             ))}
           </tbody>
         </table>
+        <p className="text-center mt-5">
+          <span onClick={handleShowAll}>
+          <button className="bg-yellow-400 w-1/2 rounded-md my-5 py-4 font-display text-black">
+            See All Jobs
+          </button>
+          </span>
+        </p>
       </div>
     </div>
   );
