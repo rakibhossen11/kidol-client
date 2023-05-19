@@ -44,7 +44,7 @@ const SignIn = () => {
           <input
             name="photo"
             className="input input-bordered w-full"
-            required
+            
           />
         </div>
         <div className="mb-6">

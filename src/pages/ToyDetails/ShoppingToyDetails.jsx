@@ -24,7 +24,10 @@ const ShoppingToyDetails = () => {
     const category = toyDetails.category;
     const price = toyDetails.price;
     const quantity = toyDetails.quantity;
-    const orderToy = { name, sellerName, category, price, quantity };
+    const image = toyDetails.image;
+    const details = toyDetails.details;
+    const rating = toyDetails.rating;
+    const orderToy = { name, sellerName, category, price, quantity, image,details,rating };
     console.log(orderToy);
     fetch("https://kidol-server.vercel.app/shopping", {
       method: "POST",
@@ -51,12 +54,12 @@ const ShoppingToyDetails = () => {
           <p className="font-myFont text-2xl">Rating: {rating}</p>
           <p className="font-myFont text-2xl">Seller Name: {sellerName}</p>
           <p className="font-myFont text-2xl">Seller Email: {sellerEmail}</p>
-          <button
+          {/* <button
             onClick={handleToyShop}
             className="bg-orange-400 px-6 py-4 rounded-md text-xl text-white font-myFont"
           >
             Order Now
-          </button>
+          </button> */}
         </div>
       </div>
       <p className="font-myFont text-2xl">Product Details:</p>

@@ -72,15 +72,12 @@ const Navbar = () => {
       <div className="navbar-end">
         {user ? (
           <>
-            <div className="w-24 h-24 rounded-full">
-              {/* <img src={user?.photoURL} /> */}
-            </div>{" "}
             <button
               onClick={handleLogOut}
-              className="border-2 border-white rounded-xl px-5 py-3 font-myFont"
+              className="border-2 border-white rounded-xl mr-2 px-5 py-3 font-myFont"
             >
               LogOut
-            </button>{" "}
+            </button>
           </>
         ) : (
           <Link to="/login">
@@ -91,7 +88,7 @@ const Navbar = () => {
         )}
 
         {user ? (
-            <div className="tooltip" data-tip={user?.displayName}>
+            <div className="tooltip mr-2" data-tip={user?.displayName}>
                 <img className="w-10 h-10 rounded-full" src={user?.photoURL} alt="" />
             </div>
         ) : (
