@@ -2,9 +2,10 @@ import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { Link } from "react-router-dom";
 import SocialLogin from "../shared/SocialLogin";
+import { updateProfile } from "firebase/auth";
 
 const SignIn = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser,user } = useContext(AuthContext);
   const handleSignUp = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -17,6 +18,9 @@ const SignIn = () => {
     .then(res => {
         const user = res.user;
         console.log('signin',user);
+        updateProfile(user,{
+          displayName: name,photoURL:photo
+        })
     })
     .then(err => console.log(err))
   };

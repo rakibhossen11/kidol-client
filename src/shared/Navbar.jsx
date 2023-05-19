@@ -91,8 +91,8 @@ const Navbar = () => {
         )}
 
         {user ? (
-            <div className="tooltip" data-tip={user.displayName}>
-                <img className="w-10 h-10 rounded-full" src="" alt="" />
+            <div className="tooltip" data-tip={user?.displayName}>
+                <img className="w-10 h-10 rounded-full" src={user?.photoURL} alt="" />
             </div>
         ) : (
           <UserCircleIcon className="h-12 w-12 mr-2 text-blue-500"></UserCircleIcon>
