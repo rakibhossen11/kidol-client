@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const AllToysRow = ({allToy,handleDelete}) => {
-    const {_id,name,seller,subCategory,price,quantity} = allToy;
+    const {_id,name,sellerName,category,price,quantity} = allToy;
 
   return (
-    <tr>
+    <tr className="font-myFont">
       <th>
         <button onClick={() => handleDelete(_id)} className="btn btn-sm btn-circle">
           <svg
@@ -30,11 +30,9 @@ const AllToysRow = ({allToy,handleDelete}) => {
           </div>
       </td>
             <th>{name}</th>
-            <th>{seller}</th>
-            <th>Seller Email</th>
-            <th>{subCategory}</th>
+            <th>{sellerName}</th>
+            <th>{category}</th>
             <th>{price}</th>
-            <th>Rating</th>
             <th>{quantity}</th>
             <th>
               <Link to={`/updateToys/${_id}`}>

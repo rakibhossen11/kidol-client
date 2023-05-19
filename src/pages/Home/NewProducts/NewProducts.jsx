@@ -13,7 +13,7 @@ const NewProducts = () => {
   }, []);
   return (
     <div className="my-10 mx-auto">
-      <h1 className="text-center font-display text-4xl">New Products</h1>
+      <h1 className="text-center font-display text-4xl">Shop By Category</h1>
       <p className="text-center font-myFont">
         We are thrilled to present an exciting array of toys that will ignite
         the imagination and bring endless joy to children of all ages. Whether

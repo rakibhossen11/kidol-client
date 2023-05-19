@@ -6,7 +6,7 @@ const AllToys = () => {
   const [allToys, setAllToys] = useState([]);
 
   useEffect(() => {
-    fetch("https://kidol-server.vercel.app/toys")
+    fetch("https://kidol-server.vercel.app/shopping")
       .then((res) => res.json())
       .then((data) => setAllToys(data));
   }, []);
@@ -41,12 +41,12 @@ const AllToys = () => {
 
   return (
     <div>
-      <h2 className="text-5xl">Bookings: {allToys.length}</h2>
+      <h2 className="text-3xl my-4 p-4">Total Toys: {allToys.length}</h2>
       <div className="overflow-x-auto w-full">
         <table className="table w-full">
           {/* head */}
           <thead>
-            <tr>
+            <tr className="font-medium text-2xl">
               <th>
                 <label>
                   <input type="checkbox" className="checkbox" />
@@ -55,10 +55,8 @@ const AllToys = () => {
               <th>Toy Image</th>
               <th>Name</th>
               <th>Seller Name</th>
-              <th>Seller Email</th>
               <th>Category</th>
               <th>Price</th>
-              <th>Rating</th>
               <th>Available Quantity</th>
               <th>Details</th>
               <th></th>

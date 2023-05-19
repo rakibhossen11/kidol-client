@@ -17,7 +17,7 @@ const Product = ({ product }) => {
           <h2 className="font-display text-2xl">{name}</h2>
           <p className="font-myFont text-lg">Price: {price}</p>
             <Link to={`/toyDetails/${_id}`}>
-            <button className="bg-amber-600 px-6 py-4 rounded-md text-xl text-white font-myFont w-full">Buy now!</button>
+            <button className="bg-amber-600 px-6 py-4 rounded-md text-xl text-white font-myFont w-full">View Details</button>
             </Link>
         </div>
       </div>
