@@ -1,5 +1,6 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const UpdateToys = () => {
     const toys = useLoaderData();
@@ -24,6 +25,15 @@ const UpdateToys = () => {
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
+          if(data.modifiedCount>0){
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: 'Your Toy is update',
+              showConfirmButton: false,
+              timer: 1500
+            })
+          }
         });
   };
 

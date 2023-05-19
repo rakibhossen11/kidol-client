@@ -1,6 +1,7 @@
 import { data } from "autoprefixer";
 import React, { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const AddToys = () => {
   const {user} = useContext(AuthContext);
@@ -28,6 +29,15 @@ const AddToys = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        if(data.acknowledged = true){
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Your Toy is Added',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        }
       });
   };
   return (
