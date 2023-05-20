@@ -5,13 +5,25 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
 const NewProducts = () => {
   const [products, setProducts] = useState([]);
-  const [regularCar,setRegularCar] = useState([]);
+  const [regular,setRegular] = useState([]);
+  const [truck,setTruck] = useState([]);
+  const [sports,setSports] = useState([]);
 
 
   useEffect(() => {
-    fetch("https://kidol-server.vercel.app/toys")
+    fetch("https://kidol-server.vercel.app/toys?category=Regular%20Car")
       .then((res) => res.json())
-      .then((data) => setProducts(data));
+      .then((data) => setRegular(data));
+  }, []);
+  useEffect(() => {
+    fetch("https://kidol-server.vercel.app/toys?category=Sport%20Car")
+      .then((res) => res.json())
+      .then((data) => setSports(data));
+  }, []);
+  useEffect(() => {
+    fetch("https://kidol-server.vercel.app/toys?category=Truck")
+      .then((res) => res.json())
+      .then((data) => setTruck(data));
   }, []);
 
 
@@ -28,7 +40,7 @@ const NewProducts = () => {
       <div className="flex items-center justify-center mt-10">
         <Tabs>
           <div className="flex items-center justify-center mt-10">
-            <TabList className="flex mb-10 gap-3">
+            <TabList name="RegularCar" className="flex mb-10 gap-3">
               <Tab className="btn btn-outline btn-warning font-myFont text-xl">
                 Regular Car
               </Tab>
@@ -43,23 +55,23 @@ const NewProducts = () => {
 
           <TabPanel className=" mt-10">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {products.map((product) => (
+              {regular.map((product) => (
                 <Product key={product._id} product={product}
                 ></Product>
               ))}
             </div>
           </TabPanel>
           <TabPanel className=" mt-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {products.map((product) => (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {sports.map((product) => (
                 <Product key={product._id} product={product}
                 ></Product>
               ))}
             </div>
           </TabPanel>
           <TabPanel className=" mt-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {products.map((product) => (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {truck.map((product) => (
                 <Product key={product._id} product={product}
                 ></Product>
               ))}
