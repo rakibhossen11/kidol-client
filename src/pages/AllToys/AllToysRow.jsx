@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const AllToysRow = ({ allToy }) => {
   const { _id, name, image, sellerName, category, price, quantity } = allToy;
-  console.log(allToy);
+  // console.log(allToy);
 
   return (
     <tr className="font-myFont">

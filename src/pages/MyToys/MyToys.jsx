@@ -10,6 +10,8 @@ const MyToys = () => {
   useTitle("My-Toys");
   const { user } = useContext(AuthContext);
   const [loading, setLoading] = useState(true);
+  // const [laoding, setLoading] = useState(true);
+  const [selected, setSelected] = useState([]);
   // console.log(user.email);
 
   const url = `https://kidol-server.vercel.app/toys?sellerEmail=${user.email}&sort=1`;
@@ -57,9 +59,40 @@ const MyToys = () => {
     });
   };
 
+  useEffect(()=>{
+    setLoading(true);
+    const fetchProducts = async () =>{
+      try{
+          const [value,type] = selected.split('-').map(item => item.toLowerCase());
+          const response = await fetch(`https://kidol-server.vercel.app/shopping?value=${value}&type=${type}`);
+          const data = await response.json();
+          setAllToys(data);
+      }finally{
+        setTimeout(()=>{
+          setLoading(false)
+        },1000)
+      };
+    };
+    fetchProducts();
+  },[selected])
+
+  const handleChangeToCategory = (event) => {
+    setSelected(event.target.value);
+  };
+
   return (
     <div>
       <h2 className="text-3xl my-4 p-4">Total Toys: {myToys.length}</h2>
+      <div className="flex justify-end mr-3 mb-3">
+        <select
+          onChange={handleChangeToCategory}
+          className="select select-bordered"
+        >
+          <option value="">Sort by</option>
+          <option value="Price-Decending">High To Low</option>
+          <option value="Price-Ascending">Low To High</option>
+        </select>
+      </div>
       <div className="overflow-x-auto w-full">
         <table className="table w-full">
           {/* head */}

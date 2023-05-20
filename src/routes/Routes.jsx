@@ -43,7 +43,7 @@ import Error from "../Error/Error";
         },
         {
           path: '/myToys',
-          element: <MyToys></MyToys>,
+          element: <PrivateRoutes><MyToys></MyToys></PrivateRoutes>,
         },
         {
           path: '/blogs',
@@ -61,7 +61,7 @@ import Error from "../Error/Error";
         },
         {
           path: '/shoppingToyDetails/:id',
-          element: <ShoppingToyDetails></ShoppingToyDetails>,
+          element: <PrivateRoutes><ShoppingToyDetails></ShoppingToyDetails></PrivateRoutes>,
           loader: ({params}) => fetch(`https://kidol-server.vercel.app/shopping/${params.id}`)
         }
       ]
