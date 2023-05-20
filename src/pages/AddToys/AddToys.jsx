@@ -7,7 +7,7 @@ import useTitle from "../../hooks/useTitle";
 const AddToys = () => {
   const {user} = useContext(AuthContext);
   useTitle('Add a Toy');
-  
+
   const handleAddToy = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -21,7 +21,7 @@ const AddToys = () => {
     const quantity = form.quantity.value;
     const details = form.details.value;
     const newToy = { name, sellerName, sellerEmail, category, image, price, rating, quantity, details };
-    console.log(newToy);
+    // console.log(newToy);
     fetch("https://kidol-server.vercel.app/toys", {
       method: "POST",
       headers: {
@@ -31,7 +31,7 @@ const AddToys = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if(data.acknowledged = true){
           Swal.fire({
             position: 'center',

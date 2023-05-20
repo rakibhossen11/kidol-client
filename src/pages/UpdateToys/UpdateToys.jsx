@@ -16,7 +16,7 @@ const UpdateToys = () => {
     const quantity = form.quantity.value;
     const details = form.details.value;
     const updateToy = { price, quantity, details };
-    console.log("Updated toy", updateToy);
+    // console.log("Updated toy", updateToy);
       fetch(`https://kidol-server.vercel.app/toys/${_id}`, {
         method: "PUT",
         headers: {
@@ -26,7 +26,7 @@ const UpdateToys = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
+          // console.log(data);
           if(data.modifiedCount>0){
             Swal.fire({
               position: 'center',

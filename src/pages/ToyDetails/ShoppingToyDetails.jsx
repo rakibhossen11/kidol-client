@@ -30,7 +30,7 @@ const ShoppingToyDetails = () => {
     const details = toyDetails.details;
     const rating = toyDetails.rating;
     const orderToy = { name, sellerName, category, price, quantity, image,details,rating };
-    console.log(orderToy);
+    // console.log(orderToy);
     fetch("https://kidol-server.vercel.app/shopping", {
       method: "POST",
       headers: {
@@ -40,7 +40,7 @@ const ShoppingToyDetails = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
       });
   };
 

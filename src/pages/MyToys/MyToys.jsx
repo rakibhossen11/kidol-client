@@ -1,22 +1,36 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 // import AllToysRow from "./AllToysRow";
 import Swal from "sweetalert2";
 import MyToysRow from "./MyToysRow";
 import useTitle from "../../hooks/useTitle";
-
+import { AuthContext } from "../../provider/AuthProvider";
 
 const MyToys = () => {
   const [myToys, setMyToys] = useState([]);
-  useTitle('My-Toys');
+  useTitle("My-Toys");
+  const { user } = useContext(AuthContext);
+  const [loading, setLoading] = useState(true);
+  // console.log(user.email);
+
+  const url = `https://kidol-server.vercel.app/toys?sellerEmail=${user.email}&sort=1`;
+  // console.log(url);
+
+  // if(loading){
+  //   return <><p>data processing</p></>;
+  // }
 
   useEffect(() => {
-    fetch("https://kidol-server.vercel.app/toys")
+    // setLoading(true);
+    fetch(url)
       .then((res) => res.json())
-      .then((data) => setMyToys(data));
+      .then((data) => {
+        setMyToys(data);
+        // setLoading(false);
+      });
   }, []);
 
   const handleDelete = (id) => {
-    console.log(id);
+    // console.log(id);
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -32,7 +46,7 @@ const MyToys = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
+            // console.log(data);
             if (data.deletedCount > 0) {
               Swal.fire("Deleted!", "Your file has been deleted.", "success");
               const remaining = myToys.filter((allToy) => allToy._id !== id);

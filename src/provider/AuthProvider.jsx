@@ -29,20 +29,10 @@ const AuthProvider = ({children}) => {
         return signOut(auth);
     }
 
-    // const updateUserData = (user,photo) =>{
-    //     updateProfile(user,{
-    //         // displayName: name,
-    //         photoURL: photo
-    //     }).then(() =>{
-    //         console.log('user name updated');
-    //     })
-    //     .then(err => console.log(err))
-    // }
-
     useEffect(()=>{
         const unsubscribe = onAuthStateChanged(auth,currentUSer=>{
             setUser(currentUSer);
-            console.log('user from provider',currentUSer);
+            // console.log('user from provider',currentUSer);
             setLoading(false);
         })
         return () =>{

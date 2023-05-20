@@ -32,6 +32,7 @@ const ToyDetails = () => {
     const orderToy = {
       name,
       sellerName,
+      sellerEmail,
       category,
       price,
       quantity,
@@ -39,7 +40,7 @@ const ToyDetails = () => {
       details,
       rating,
     };
-    console.log(orderToy);
+    // console.log(orderToy);
     fetch("https://kidol-server.vercel.app/shopping", {
       method: "POST",
       headers: {
@@ -49,7 +50,7 @@ const ToyDetails = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if ((data.acknowledged = true)) {
           Swal.fire({
             position: "center",

@@ -5,12 +5,16 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
 const NewProducts = () => {
   const [products, setProducts] = useState([]);
+  const [regularCar,setRegularCar] = useState([]);
+
 
   useEffect(() => {
     fetch("https://kidol-server.vercel.app/toys")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
+
+
   return (
     <div className="my-10 mx-auto p-3">
       <h1 className="text-center font-display text-4xl">Shop By Category</h1>

@@ -14,7 +14,7 @@ const SocialLogin = () => {
         googleSignIn()
         .then(result => {
           const user = result.user;
-          console.log(user)
+          // console.log(user)
           navigate(from, {replace: true})
         })
         .then(err => console.log(err))

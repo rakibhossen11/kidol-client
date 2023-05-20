@@ -8,7 +8,7 @@ import useTitle from "../hooks/useTitle";
 const SignIn = () => {
   const { createUser,user } = useContext(AuthContext);
   useTitle('Signin');
-  
+
   const handleSignUp = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -16,11 +16,11 @@ const SignIn = () => {
     const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(name,photo,email,password);
+    // console.log(name,photo,email,password);
     createUser(email,password)
     .then(res => {
         const user = res.user;
-        console.log('signin',user);
+        // console.log('signin',user);
         updateProfile(user,{
           displayName: name,photoURL:photo
         })
