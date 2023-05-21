@@ -3,6 +3,8 @@ import logo from "../assets/logo/logo.webp";
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { UserCircleIcon } from "@heroicons/react/24/solid";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCarSide } from '@fortawesome/free-solid-svg-icons'
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -60,8 +62,9 @@ const Navbar = () => {
             {navItems}
           </ul>
         </div>
-        <Link to="/">
-          <img className="h-10 w-28 lg:w-40 lg:h-14" src={logo} alt="" />
+        <Link className="flex items-center justify-center gap-2" to="/">
+          <FontAwesomeIcon className="h-10 w-full text-sky-600" icon={faCarSide} /> 
+          <h2 className="font-myFont text-3xl">Kidol</h2>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">

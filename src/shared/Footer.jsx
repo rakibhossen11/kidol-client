@@ -1,16 +1,18 @@
 import logo from "../assets/logo/logo.webp";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCarSide } from '@fortawesome/free-solid-svg-icons'
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <div>
-      <footer className="footer p-10 bg-base-200 text-base-content">
+      <footer className="footer p-10 bg-base-200 text-base-content font-myFont">
         <div>
-          <img src={logo} alt="" />
-          <p>
-            Kiddo Industries Ltd.
-            <br />
-            Providing reliable toys since 1992
-          </p>
+        <Link className="flex items-center justify-center gap-2" to="/">
+          <FontAwesomeIcon className="h-10 w-full text-sky-600" icon={faCarSide} /> 
+          <h2 className="font-myFont text-3xl">Kidol</h2>
+        </Link>
+        <p>KIDOL Industries Ltd.<br/>Providing reliable toys since 2020</p>
         </div>
         <div>
           <span className="footer-title">Services</span>
