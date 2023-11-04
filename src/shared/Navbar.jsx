@@ -3,8 +3,8 @@ import logo from "../assets/logo/logo.webp";
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { UserCircleIcon } from "@heroicons/react/24/solid";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCarSide } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCarSide } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -36,8 +36,20 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar bg-orange-100 px-4">
-      <div className="navbar-start">
+    <div className="flex justify-between items-center bg-[#005696] px-10 h-16">
+      {/* logo and title section */}
+      <h1 className="font-medium text-2xl text-white ">Play Store</h1>
+      {/* navlink section */}
+      <div>
+        <ul className="flex text-white font-medium text-xl gap-2">
+          {navItems}
+        </ul>
+      </div>
+      {/* profile section */}
+      <div>
+        <UserCircleIcon className="h-10 w-10 mr-2 text-white"></UserCircleIcon>
+      </div>
+      {/* <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
             <svg
@@ -97,7 +109,7 @@ const Navbar = () => {
         ) : (
           <UserCircleIcon className="h-12 w-12 mr-2 text-blue-500"></UserCircleIcon>
         )}
-      </div>
+      </div> */}
     </div>
   );
 };
