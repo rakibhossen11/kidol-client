@@ -2,8 +2,8 @@ import React from "react";
 
 const Gellery = () => {
   return (
-    <div className="mt-10 bg-Cyanblue">
-      <h2 className="text-center font-Ubuntuu text-4xl text-Blue">Our Gellary</h2>
+    <div className="">
+      <h2 className="text-center bg-Yellow py-4 font-Ubuntuu text-4xl text-Blue">Our Gellary</h2>
       <p className="text-center text-2xl font-Poppins">
         Welcome to our Sports Car Toy Gallery, where speed and style converge in
         miniature form! Get ready to rev up your imagination as we present a
