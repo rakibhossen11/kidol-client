@@ -4,7 +4,8 @@ import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { UserCircleIcon } from "@heroicons/react/24/solid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCarSide } from "@fortawesome/free-solid-svg-icons";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import Button from "../components/Button";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -18,17 +19,17 @@ const Navbar = () => {
 
   const navItems = (
     <>
-      <li>
+      <li className="">
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="/allToys">All Toys</Link>
+        <Link to="/allToys">ChildZone</Link>
       </li>
       <li>
-        <Link to="/myToys">My Toys</Link>
+        <Link to="/myToys">KidsWorld</Link>
       </li>
       <li>
-        <Link to="/addToys">Add a Toys</Link>
+        <Link to="/addToys">Create</Link>
       </li>
       <li>
         <Link to="/blogs">Blogs</Link>
@@ -36,18 +37,48 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="flex justify-between items-center bg-[#005696] px-10 h-16">
-      {/* logo and title section */}
-      <h1 className="font-medium text-2xl text-white ">Play Store</h1>
-      {/* navlink section */}
-      <div>
-        <ul className="flex text-white font-medium text-xl gap-2">
-          {navItems}
-        </ul>
-      </div>
+    <div className="bg-[#003580] px-10 pb-3 pt-5">
+    <div className="flex justify-between items-center">
+        {/* logo and title section */}
+        <h1 className="font-Ubuntuu text-2xl text-[#f2f6fa] ">Kidz Store</h1>
+        {/* Search secdtion */}
+        <div className="relative w-3/4 mb-4 flex flex-wrap items-stretch">
+          <input
+            className="font-Ubuntuu"
+            type="text"
+            placeholder="Search by product name"
+          />
+          <span
+            className="input-group-text flex items-center whitespace-nowrap rounded px-3 py-1.5 text-center text-base font-normal text-white"
+            id="basic-addon2"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              className="h-5 w-5"
+            >
+              <path
+                d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </span>
+        </div>
       {/* profile section */}
       <div>
         <UserCircleIcon className="h-10 w-10 mr-2 text-white"></UserCircleIcon>
+      </div>
+      <div className="flex gap-3 justify-center items-center">
+        <Button title={'Register'} />
+        <Button title={'SignIn'} />
+      </div>
+    </div>
+    {/* navlink section */}
+    <div>
+        <ul className="flex text-white font-Ubuntuu text-xl gap-6 py-2">
+          {navItems}
+        </ul>
       </div>
       {/* <div className="navbar-start">
         <div className="dropdown">

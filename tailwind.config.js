@@ -9,6 +9,7 @@ export default {
     fontFamily: {
       display: ['Bebas Neue', 'sans-serif'],
       myFont: ['Poppins', 'sans-serif'],
+      Ubuntuu: ['Ubuntu', 'sans-serif'],
     },
   },
   plugins: [require("daisyui"),require('flowbite/plugin')],
