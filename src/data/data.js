@@ -9,25 +9,31 @@ export const cars = [
     {
         name : "Yello Stone Cars",
         image: car1,
+        price: 3500,
     },
     {
         name : "Toyota Blue",
         image: car2,
+        price: 3000,
     },
     {
         name : "Mistibishi",
         image: car3,
+        price: 5000,
     },
     {
         name : "Benz",
         image: car4,
+        price: 3500,
     },
     {
         name : "BMW",
         image: car5,
+        price: 5500,
     },
     {
         name : "Sports Car",
         image: car6,
+        price: 5000,
     },
 ]

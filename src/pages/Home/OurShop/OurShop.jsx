@@ -12,7 +12,7 @@ const OurShop = () => {
   }, []);
   return (
     <div className="p-4 bg-Cyanblue border-t-2 border-Cyan">
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-2">
         {cars.map((product) => (
           <Product key={product._id} product={product}></Product>
         ))}

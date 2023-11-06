@@ -55,7 +55,7 @@ const Product = ({ product }) => {
         {/* product descriptioin on card section */}
         <div className="p-6">
           <div className="flex items-center justify-between mb-3">
-            <h2 className="block font-sans text-xl antialiased font-medium leading-snug tracking-normal text-blue-gray-900">
+            <h2 className="block font-sans text-xl antialiased font-Ubuntuu leading-snug tracking-normal text-Blue">
               {name}
             </h2>
             <p className="flex items-center gap-1.5 font-sans text-base font-normal leading-relaxed text-blue-gray-900 antialiased">
@@ -76,6 +76,7 @@ const Product = ({ product }) => {
               4.5
             </p>
           </div>
+          <p className="block font-Ubuntuu text-xl antialiased leading-snug tracking-normal text-Zinc">$ {price}</p>
             {/* <Link to={`/toyDetails/${_id}`}></Link> */}
           {/* <p className="font-myFont text-lg ">Rating: <Rating
             style={{ maxWidth: 150 }}
