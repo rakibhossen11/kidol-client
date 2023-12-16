@@ -6,33 +6,33 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div>
-      <footer className="footer p-10 bg-base-200 text-base-content font-myFont">
-        <div>
-        <Link className="flex items-center justify-center gap-2" to="/">
-          <FontAwesomeIcon className="h-10 w-full text-sky-600" icon={faCarSide} /> 
-          <h2 className="font-myFont text-3xl">Kidol</h2>
+      <div className="bg-Blue px-12 text-Cyanblue">
+        <Link className="" to="/">
+          {/* <FontAwesomeIcon className="h-10 w-full text-sky-600" icon={faCarSide} />  */}
+          <h2 className="font-Ubuntuu text-3xl">Play Store</h2>
         </Link>
-        <p>KIDOL Industries Ltd.<br/>Providing reliable toys since 2020</p>
+        <p>Rakib Industries Ltd.<br/>Providing reliable products since 2023</p>
         </div>
+      <footer className="footer p-10 bg-Cyanblue text-base-content font-Ubuntuu">
         <div>
-          <span className="footer-title">Services</span>
+          <span className="footer-title text-Blue">Services</span>
           <a className="link link-hover">Branding</a>
           <a className="link link-hover">Design</a>
           <a className="link link-hover">Marketing</a>
           <a className="link link-hover">Advertisement</a>
         </div>
         <div>
-          <span className="footer-title">Company</span>
+          <span className="footer-title text-Blue">Company</span>
           <a className="link link-hover">About us</a>
           <a className="link link-hover">Contact</a>
           <a className="link link-hover">Jobs</a>
           <a className="link link-hover">Press kit</a>
         </div>
         <div>
-          <span className="footer-title">Subscribe to Connect</span>
+          <span className="footer-title text-Blue">Subscribe to Connect</span>
           <div className="form-control w-80">
             <label className="label">
-              <span className="label-text">Enter your email address</span>
+              <span className="text-Zinc">Enter your email address</span>
             </label>
             <div className="relative">
               <input
@@ -40,7 +40,7 @@ const Footer = () => {
                 placeholder="username@kidol.com"
                 className="input input-bordered w-full pr-16"
               />
-              <button className="btn bg-orange-400 border-0 absolute top-0 right-0 rounded-l-none">
+              <button className="btn bg-Blue border-0 absolute top-0 right-0 rounded-l-none">
                 Subscribe
               </button>
             </div>
@@ -82,7 +82,7 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      <footer className="footer footer-center p-4 bg-base-300 text-base-content">
+      <footer className="footer footer-center p-4 bg-Cyan text-white">
         <div>
           <p>Copyright © 2023 - All right reserved by Kidol Industries Ltd</p>
         </div>
