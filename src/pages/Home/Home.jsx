@@ -10,7 +10,7 @@ const Home = () => {
     useTitle('Home');
     return (
         <div>
-            {/* <Banner></Banner> */}
+            <Banner></Banner>
             {/* <Gellery></Gellery> */}
             {/* <OurShop></OurShop> */}
             {/* <NewProducts></NewProducts> */}
