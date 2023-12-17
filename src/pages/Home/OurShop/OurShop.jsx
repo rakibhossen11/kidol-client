@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from "react";
+import { products } from "../../../data/data";
 import Product from "../NewProducts/Product";
-import { cars } from "../../../data/data";
 
 const OurShop = () => {
-  const [products, setProducts] = useState([]);
+  const [product, setProduct] = useState([]);
 
   useEffect(() => {
-    fetch("https://kidol-server.vercel.app/toys")
+    fetch("")
       .then((res) => res.json())
-      .then((data) => setProducts(data));
+      .then((data) => setProduct(data));
   }, []);
   return (
     <div className="px-[100px] pt-[30px] pb-[70px] bg-Cyanblue border-t-2 border-Cyan">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-2">
-        {cars.map((product) => (
-          <Product key={product._id} product={product}></Product>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+        {products.map((product) => (
+          <Product key={product.id} product={product}></Product>
         ))}
       </div>
     </div>

@@ -15,7 +15,7 @@ import {
 } from "@material-tailwind/react";
 
 const Product = ({ product }) => {
-  const { _id, name, seller, image, category, rating, price, quantity } =
+  const { id, name, images, price, } =
     product;
   const { user } = useContext(AuthContext);
 
@@ -35,7 +35,9 @@ const Product = ({ product }) => {
     {/* card design */}
       <div className="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
         {/* product image in card */}
-          <img className="relative mx-4 mt-4 overflow-hidden text-white shadow-lg rounded-xl bg-blue-gray-500 bg-clip-border h-36 shadow-blue-gray-500/40" src={image} alt="" />
+          {
+            images.map((image) => <img className="relative mx-4 mt-4 overflow-hidden text-white shadow-lg rounded-xl bg-blue-gray-500 bg-clip-border h-36 shadow-blue-gray-500/40" src={image} alt="" />) 
+          }
           {/* above image on card heart icon for add to card */}
           <div>
             <button className="!absolute top-4 right-4 h-8 max-h-[32px] w-8 max-w-[32px] select-none rounded-full text-center align-middle font-sans text-xs font-medium uppercase text-red-500 transition-all hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">

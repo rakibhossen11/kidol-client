@@ -1,90 +1,58 @@
-import logo from "../assets/logo/logo.webp";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCarSide } from '@fortawesome/free-solid-svg-icons'
+import { FaFacebookF,FaYoutube,FaTwitter, } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div>
-      <div className="bg-Blue px-12 text-Cyanblue">
+    <div className="mt-[100px]">
+      <div className="bg-[#D0D3D4] px-[100px] pt-[70px] pb-[40px]">
         <Link className="" to="/">
           {/* <FontAwesomeIcon className="h-10 w-full text-sky-600" icon={faCarSide} />  */}
-          <h2 className="font-Ubuntuu text-3xl">Play Store</h2>
+          <h2 className="font-Bebas text-[44px]">K-Shop</h2>
         </Link>
-        <p>Rakib Industries Ltd.<br/>Providing reliable products since 2023</p>
+        <p className="font-Bebas text-[18px]">Rakib Industries Ltd.<br/>Providing reliable products since 2023</p>
         </div>
-      <footer className="footer p-10 bg-Cyanblue text-base-content font-Ubuntuu">
+      <footer className="footer px-[100px] pt-[70px] pb-[40px] bg-[#979A9A]">
         <div>
-          <span className="footer-title text-Blue">Services</span>
-          <a className="link link-hover">Branding</a>
-          <a className="link link-hover">Design</a>
-          <a className="link link-hover">Marketing</a>
-          <a className="link link-hover">Advertisement</a>
-        </div>
-        <div>
-          <span className="footer-title text-Blue">Company</span>
-          <a className="link link-hover">About us</a>
-          <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Jobs</a>
-          <a className="link link-hover">Press kit</a>
+          <span className="font-Bebas text-[24px] pb-[10px]">Services</span>
+          <p className="font-Bebas text-[16px]">Branding</p>
+          <p className="font-Bebas text-[16px]">Design</p>
+          <p className="font-Bebas text-[16px]">Marketing</p>
+          <p className="font-Bebas text-[16px]">Advertisement</p>
         </div>
         <div>
-          <span className="footer-title text-Blue">Subscribe to Connect</span>
+        <span className="font-Bebas text-[24px] pb-[10px]">Company</span>
+          <p className="font-Bebas text-[16px]">About us</p>
+          <p className="font-Bebas text-[16px]">Contact</p>
+          <p className="font-Bebas text-[16px]">Jobs</p>
+          <p className="font-Bebas text-[16px]">Press kit</p>
+        </div>
+        <div>
+        <span className="font-Bebas text-[24px] pb-[10px]">Subscribe to Connect</span>
           <div className="form-control w-80">
             <label className="label">
-              <span className="text-Zinc">Enter your email address</span>
+              <span className="font-Bebas">Enter your email address</span>
             </label>
-            <div className="relative">
+            <div className="md:flex">
               <input
                 type="text"
-                placeholder="username@kidol.com"
-                className="input input-bordered w-full pr-16"
+                placeholder="username@kshop.com"
+                className="input input-bordered w-full pr-16 font-Bebas"
               />
-              <button className="btn bg-Blue border-0 absolute top-0 right-0 rounded-l-none">
+              <button className="bg-[#2E4053] font-Bebas text-white px-[16px] rounded-[4px]">
                 Subscribe
               </button>
             </div>
           </div>
           <div className="grid grid-flow-col gap-4 mt-3">
-            <a>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                className="fill-current"
-              >
-                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
-              </svg>
-            </a>
-            <a>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                className="fill-current"
-              >
-                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
-              </svg>
-            </a>
-            <a href="https://www.facebook.com/profile.php?id=100022729342383">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                className="fill-current"
-              >
-                <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
-              </svg>
-            </a>
+          <FaFacebookF className="w-[24px] h-[24px]"/>
+          <FaYoutube className="w-[24px] h-[24px]"/>
+          <FaTwitter className="w-[24px] h-[24px]"/>
           </div>
         </div>
       </footer>
-      <footer className="footer footer-center p-4 bg-Cyan text-white">
+      <footer className="footer footer-center font-Bebas p-[20px] bg-[#F7F9F9] text-black">
         <div>
-          <p>Copyright © 2023 - All right reserved by Kidol Industries Ltd</p>
+          <p>Copyright © 2023 - All right reserved by Kshop Industries Ltd</p>
         </div>
       </footer>
     </div>
