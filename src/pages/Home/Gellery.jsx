@@ -71,7 +71,7 @@ const Gellery = () => {
           </div>)
       }
       </div>
-      <p className="font-signika text-[18px] text-center mt-[20px]">There has 30+ Brand Category Available View More</p>
+      <p className="font-signika text-[18px] text-center mt-[20px]">There has 30+ Brand Category Available <span className="text-[#2ECC71]">View More</span></p>
     </section>
   );
 };

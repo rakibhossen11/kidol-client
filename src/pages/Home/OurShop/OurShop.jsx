@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { IoLocationSharp } from "react-icons/io5";import usedCar from '../../../data/data';
+import { IoLocationSharp } from "react-icons/io5";
+import { IoIosSpeedometer } from "react-icons/io";
+import { SiPagespeedinsights } from "react-icons/si";
+import { BsFillFuelPumpDieselFill } from "react-icons/bs";
+import usedCar from '../../../data/data';
 const OurShop = () => {
   // const [useCar, setUsedCar] = useState([]);
   // console.log(usedCar)
@@ -26,19 +30,21 @@ const OurShop = () => {
               <p className="font-signika text-[18px]">$ {car.newPrice}</p>
               <p className="font-signika text-[18px] line-through">$ {car.oldPrice}</p>
             </div>
-            <p className="flex font-signika text-[18px]"><IoLocationSharp className="h-6 w-6" /> {car.location}</p>
-            <div>
-              <p>{car.runed}</p>
-              <p>{car.oil}</p>
-              <p>{car.cc}</p>
+            <p className="flex items-center font-signika text-[18px] mt-[10px] gap-[10px] text-[#B3B6B7]"><IoLocationSharp className="h-[16px] w-[16px]" /> {car.location}</p>
+            <div className="flex justify-between">
+              <p className="flex items-center font-signika text-[18px] mt-[10px] gap-[10px] text-[#B3B6B7]"><IoIosSpeedometer className="h-[16px] w-[16px]" /> {car.runed}</p>
+              <p className="flex items-center font-signika text-[18px] mt-[10px] gap-[10px] text-[#B3B6B7]"><BsFillFuelPumpDieselFill className="h-[16px] w-[16px]" /> {car.oil}</p>
             </div>
-            <hr className="mx-[6px]" />
-            <div>
+            <p className="flex items-center font-signika text-[18px] mt-[10px] gap-[10px] text-[#B3B6B7]"><SiPagespeedinsights className="h-[16px] w-[16px]" /> {car.cc}</p>
+            <hr className="mx-[6px] mt-[10px]" />
+            <div className="flex justify-between mt-[10px]">
+              <button className="font-signika text-[18px]">View Details</button>
               <img src={car.brandLogo} alt="" />
             </div>
           </div>)
         }
       </div>
+      <p className="font-signika text-[18px] text-center mt-[40px]">Available Car 50+ <span className="text-[#2ECC71]">View All</span> Car</p>
     </section>
   );
 };
