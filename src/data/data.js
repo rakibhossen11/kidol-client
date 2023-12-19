@@ -1,4 +1,4 @@
-const usedCar = [
+export const usedCar = [
   {
     id: 1,
     name : 'Audi TT Roadster',
@@ -53,4 +53,44 @@ const usedCar = [
   },
 ];
 
-export default usedCar;
+export const launchedCar = [
+  {
+    id: 1,
+    name : 'Ferarri 298 GTB',
+    carImage: 'https://www.drivco-wp.egenslab.com/wp-content/uploads/2023/09/vehicle-20.jpg',
+    newPrice: '465,160',
+    oldPrice: '',
+    location: 'Melbourne city',
+    runed: '25,100',
+    oil: 'Petrol + Gas',
+    cc: '22,231',
+    brandName: 'Mercedes',
+    brandLogo: 'https://www.drivco-wp.egenslab.com/wp-content/uploads/2023/09/Mercedes-Logo.svg',
+  },
+  {
+    id: 3,
+    name : 'Audi a8i 2023',
+    carImage: 'https://www.drivco-wp.egenslab.com/wp-content/uploads/2023/10/vehicle-23.jpg',
+    newPrice: '370,700',
+    oldPrice: '',
+    location: 'Melbourne city',
+    runed: '25,100',
+    oil: 'Petrol + Gas',
+    cc: '22,231',
+    brandName: 'Audi',
+    brandLogo: 'https://www.drivco-wp.egenslab.com/wp-content/uploads/2023/09/Audi-Logo.svg',
+  },
+  {
+    id: 3,
+    name : 'TUCSONPlug-in Hybrid',
+    carImage: 'https://www.drivco-wp.egenslab.com/wp-content/uploads/2023/10/vehicle-19.jpg',
+    newPrice: '138,556.00',
+    oldPrice: '',
+    location: 'Melbourne city',
+    runed: '25,100',
+    oil: 'Petrol + Gas',
+    cc: '22,231',
+    brandName: 'Mazda',
+    brandLogo: 'https://www.drivco-wp.egenslab.com/wp-content/uploads/2023/09/Mask-grou.svg',
+  },
+]

@@ -3,7 +3,7 @@ import { IoLocationSharp } from "react-icons/io5";
 import { IoIosSpeedometer } from "react-icons/io";
 import { SiPagespeedinsights } from "react-icons/si";
 import { BsFillFuelPumpDieselFill } from "react-icons/bs";
-import usedCar from '../../../data/data';
+import { usedCar } from "../../../data/data";
 const OurShop = () => {
   // const [useCar, setUsedCar] = useState([]);
   // console.log(usedCar)

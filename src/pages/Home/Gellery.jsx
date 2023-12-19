@@ -65,7 +65,7 @@ const Gellery = () => {
       <div className="grid grid-cols-6 gap-[20px]">
       {
           featuredata.map((brand) => 
-          <div className="flex flex-col justify-center items-center h-[180px] gap-y-[20px] bg-[#ECF0F1] rounded-[6px] hover:bg-[#85C1E9]">
+          <div key={brand.index} className="flex flex-col justify-center items-center h-[180px] gap-y-[20px] bg-[#ECF0F1] rounded-[6px] hover:bg-[#85C1E9]">
               <img src={brand.brandlogo} alt="" />
               <img src={brand.carlogo} alt="" />
           </div>)

@@ -1,85 +1,42 @@
-import React, { useEffect, useState } from "react";
-import Product from "./Product";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-// import "react-tabs/style/react-tabs.css";
+import React from "react";
+import { launchedCar } from "../../../data/data";
+import { IoIosSpeedometer } from "react-icons/io";
+import { SiPagespeedinsights } from "react-icons/si";
+import { BsFillFuelPumpDieselFill } from "react-icons/bs";
+import { FaCar } from "react-icons/fa";
 
 const NewProducts = () => {
-  const [products, setProducts] = useState([]);
-  const [regular,setRegular] = useState([]);
-  const [truck,setTruck] = useState([]);
-  const [sports,setSports] = useState([]);
-
-
-  useEffect(() => {
-    fetch("https://kidol-server.vercel.app/toys?category=Regular%20Car")
-      .then((res) => res.json())
-      .then((data) => setRegular(data));
-  }, []);
-  useEffect(() => {
-    fetch("https://kidol-server.vercel.app/toys?category=Sport%20Car")
-      .then((res) => res.json())
-      .then((data) => setSports(data));
-  }, []);
-  useEffect(() => {
-    fetch("https://kidol-server.vercel.app/toys?category=Truck")
-      .then((res) => res.json())
-      .then((data) => setTruck(data));
-  }, []);
-
 
   return (
-    <div className="my-10 mx-auto p-3">
-      <h1 className="text-center font-display text-4xl">Shop By Category</h1>
-      <p className="text-center font-myFont">
-        We are thrilled to present an exciting array of toys that will ignite
-        the imagination and bring endless joy to children of all ages. Whether
-        you're searching for educational toys, interactive games, or adorable
-        plush companions, our latest collection is sure to captivate young
-        hearts and minds.
-      </p>
-      <div className="flex items-center justify-center mt-10">
-        <Tabs>
-          <div className="flex items-center justify-center mt-10">
-            <TabList name="RegularCar" className="flex mb-10 gap-3">
-              <Tab className="btn btn-outline btn-warning font-myFont text-xl">
-                Regular Car
-              </Tab>
-              <Tab className="btn btn-outline btn-warning font-myFont text-xl">
-                Sports Car
-              </Tab>
-              <Tab className="btn btn-outline btn-warning font-myFont text-xl">
-                Truck
-              </Tab>
-            </TabList>
-          </div>
-
-          <TabPanel className=" mt-10">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {regular.map((product) => (
-                <Product key={product._id} product={product}
-                ></Product>
-              ))}
-            </div>
-          </TabPanel>
-          <TabPanel className=" mt-10">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {sports.map((product) => (
-                <Product key={product._id} product={product}
-                ></Product>
-              ))}
-            </div>
-          </TabPanel>
-          <TabPanel className=" mt-10">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {truck.map((product) => (
-                <Product key={product._id} product={product}
-                ></Product>
-              ))}
-            </div>
-          </TabPanel>
-        </Tabs>
+    <section className="px-[20px] pt-[100px]">
+      {/* Recent Launched Car */}
+      <div>
+        <p className="font-signika text-[22px] text-[#2ECC71]">Recent Launched</p>
+        <h1 className="font-hammersmith text-[44px]">Recent Launched Car</h1>
       </div>
-    </div>
+      {/* Launched  car */}
+      <div className="grid grid-cols-3 gap-[15px] mt-[100px] pb-[70px]">
+        {
+          launchedCar.map((car) => 
+          <div className="bg-[#FBFCFC] rounded-[6px] p-[10px] h-[420px] hover:border-[2px] hover:border-[#2ECC71]">
+            <img src={car.carImage} alt="" />
+            <h1 className="font-signika text-[24px] mt-[10px]">{car.name}</h1>
+            <p className="font-signika text-[18px]">Current bid: $ {car.newPrice}</p>
+            <div className="flex justify-between mb-[8px]">
+              <p className="flex items-center font-signika text-[18px] mt-[10px] gap-[10px] text-[#B3B6B7]"><IoIosSpeedometer className="h-[16px] w-[16px]" /> {car.runed}</p>
+              <p className="flex items-center font-signika text-[18px] mt-[10px] gap-[10px] text-[#B3B6B7]"><BsFillFuelPumpDieselFill className="h-[16px] w-[16px]" /> {car.oil}</p>
+              <p className="flex items-center font-signika text-[18px] mt-[10px] gap-[10px] text-[#B3B6B7]"><SiPagespeedinsights className="h-[16px] w-[16px]" /> {car.cc}</p>
+            </div>
+            <hr />
+            <div className="flex justify-between mt-[10px]">
+              <button className="flex gap-[8px] items-center font-signika text-[18px]"><FaCar className="h-[16px] w-[16px] text-[#2ECC71]" /> View Details</button>
+              <img src={car.brandLogo} alt="" />
+            </div>
+          </div>
+          )
+        }
+      </div>
+    </section>
   );
 };
 
