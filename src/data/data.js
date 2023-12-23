@@ -94,3 +94,34 @@ export const launchedCar = [
     brandLogo: 'https://www.drivco-wp.egenslab.com/wp-content/uploads/2023/09/Mask-grou.svg',
   },
 ]
+
+export const upcoming = [
+  {
+    id: 1,
+    image: 'https://www.drivco-wp.egenslab.com/wp-content/uploads/2023/10/vehicle-23.jpg',
+    price: '34,637',
+    name: 'BMW 3 Series 2023',
+    edate: '02 June 2024',
+  },
+  {
+    id: 2,
+    image: 'https://www.drivco-wp.egenslab.com/wp-content/uploads/2023/11/vehicle-24.jpg',
+    price: '34,637',
+    name: 'Tesla Model S 2023',
+    edate: '02 June 2024',
+  },
+  {
+    id: 3,
+    image: 'https://www.drivco-wp.egenslab.com/wp-content/uploads/2023/09/vehicle-4.jpg',
+    price: '34,637',
+    name: 'Mercedes Benz C-Class 2023',
+    edate: '02 June 2024',
+  },
+  {
+    id: 4,
+    image: 'https://www.drivco-wp.egenslab.com/wp-content/uploads/2023/10/vehicle-19.jpg',
+    price: '34,637',
+    name: 'Toyota Camry 2023',
+    edate: '02 June 2024',
+  },
+]
